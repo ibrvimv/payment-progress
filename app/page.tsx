@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-// @ts-expect-error
+// @ts-expect-error no types for this lib
 import Progress from "react-circle-progress-bar";
 
 export default function InstallmentCircle() {
