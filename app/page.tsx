@@ -22,7 +22,7 @@ export default function InstallmentCircle() {
   }, []);
 
   const paidAmount = paidMonths * monthlyPayment;
-  const progress = Math.round((paidAmount / totalAmount) * 100);
+  const progress = ((paidAmount / totalAmount) * 100).toFixed(1);
   const remainingAmount = totalAmount - paidAmount;
 
   return (
