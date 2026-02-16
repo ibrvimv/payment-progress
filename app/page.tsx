@@ -68,10 +68,14 @@ useEffect(() => {
           Осталось:{" "}
           <span className="font-semibold">{remainingAmount.toLocaleString()} ₸</span>
         </p>
-        <p className="text-gray-600">Прогресс: {progress}%</p>
+        <p className="text-gray-600 mb-10">Прогресс: <span className="font-semibold">{progress}%</span></p>
+
+        <p className="text-gray-600">Цена Квартиры: <span className="font-semibold">29 220 000 ₸</span></p>
+        <p className="text-gray-600">Первоначалка: <span className="font-semibold">8 766 000 ₸</span></p>      
+        <p className="text-gray-600">Итого Оплачено: <span className="font-semibold">{(paidAmount + 8766000).toLocaleString()} ₸</span></p>
       </div>
 
-      <div className="mt-6 grid grid-cols-6 gap-2">
+      <div className="mt-6 grid grid-cols-6 gap-2 mb-20">
         {monthDates.map((date, idx) => (
           <div
             key={idx}
