@@ -16,8 +16,8 @@ useEffect(() => {
   let monthsPassed = (now.getFullYear() - start.getFullYear()) * 12 +
     (now.getMonth() - start.getMonth());
 
-  // Если сегодня >= 20-го числа, считаем текущий месяц как оплаченный
-  if (now.getDate() >= 20) {
+  // Если сегодня >= 15-го числа, считаем текущий месяц как оплаченный
+  if (now.getDate() >= 15) {
     monthsPassed += 1;
   }
 
