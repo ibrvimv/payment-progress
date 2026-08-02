@@ -7,6 +7,8 @@ export default function InstallmentCircle() {
   const monthlyPayment = 426125;
   const totalMonths = 48;
   const totalAmount = monthlyPayment * totalMonths;
+  const apartmentPrice = 29220000;
+  const initialPayment = 8766000;
 
   const [paidMonths, setPaidMonths] = useState(0);
 
@@ -30,6 +32,8 @@ useEffect(() => {
 
   const paidAmount = paidMonths * monthlyPayment;
   const progress = ((paidAmount / totalAmount) * 100).toFixed(1);
+  const totalPaid = paidAmount + initialPayment;
+  const overallProgress = ((totalPaid / apartmentPrice) * 100).toFixed(1);
   const remainingAmount = totalAmount - paidAmount;
 
   // Генерация массива дат для 48 месяцев
@@ -70,9 +74,10 @@ useEffect(() => {
         </p>
         <p className="text-gray-600 mb-10">Прогресс: <span className="font-semibold">{progress}%</span></p>
 
-        <p className="text-gray-600">Цена Квартиры: <span className="font-semibold">29 220 000 ₸</span></p>
-        <p className="text-gray-600">Первоначалка: <span className="font-semibold">8 766 000 ₸</span></p>      
-        <p className="text-gray-600">Итого Оплачено: <span className="font-semibold">{(paidAmount + 8766000).toLocaleString()} ₸</span></p>
+        <p className="text-gray-600">Цена Квартиры: <span className="font-semibold">{apartmentPrice.toLocaleString()} ₸</span></p>
+        <p className="text-gray-600">Первоначалка: <span className="font-semibold">{initialPayment.toLocaleString()} ₸</span></p>
+        <p className="text-gray-600">Итого Оплачено: <span className="font-semibold">{totalPaid.toLocaleString()} ₸</span></p>
+        <p className="text-gray-600 mb-10">Общий прогресс: <span className="font-semibold">{overallProgress}%</span></p>
       </div>
 
       <div className="mt-6 grid grid-cols-6 gap-2 mb-20">
